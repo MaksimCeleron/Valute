@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -82,7 +76,7 @@ namespace Valute
 
         private void RatesForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.F && Control.ModifierKeys == Keys.Control)
+            if (Control.ModifierKeys == Keys.Control && e.KeyValue == (char)Keys.F)
             {
                 for (int repeats = 0; repeats < RatesListBox.Items.Count; repeats++)
                 {
@@ -93,7 +87,7 @@ namespace Valute
 
         private void RatesForm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.F && Control.ModifierKeys == Keys.Control)
+            if (Control.ModifierKeys == Keys.Control && e.KeyValue == (char)Keys.F)
             {
                 for (int repeats = 0; repeats < RatesListBox.Items.Count; repeats++)
                 {

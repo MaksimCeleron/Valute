@@ -65,7 +65,7 @@ namespace Valute
             this.ProgramVersionLabel.Name = "ProgramVersionLabel";
             this.ProgramVersionLabel.Size = new System.Drawing.Size(58, 13);
             this.ProgramVersionLabel.TabIndex = 2;
-            this.ProgramVersionLabel.Text = "Версія 1.0";
+            this.ProgramVersionLabel.Text = "Версія 1.1";
             // 
             // ProgramDeveloperLabel
             // 

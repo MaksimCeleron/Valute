@@ -69,7 +69,7 @@ namespace Valute
             if (CurrencyCountTextBox.Text == "")
             {
                 e.Handled = !char.IsDigit(e.KeyChar);
-                ConvertButton.Enabled = true;
+                ConvertButton.Enabled = !e.Handled;
             } else
             {
                 if (e.KeyChar == '.')
@@ -201,18 +201,28 @@ namespace Valute
 
         private void ValuteForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.F && Control.ModifierKeys == Keys.Control && convertationresult != 0)
+            if (Control.ModifierKeys == Keys.Control && e.KeyValue == (char)Keys.F && convertationresult != 0)
             {
                 ConvertationResultTextBox.Text = convertationresult.ToString();
+            } else if (Control.ModifierKeys == Keys.Control && e.KeyValue == (char)Keys.W)
+            {
+                ValuteWidgetForm ValuteWidgetForm = new ValuteWidgetForm();
+                ValuteWidgetForm.Show();
+                Hide();
             }
         }
 
         private void ValuteForm_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.F && Control.ModifierKeys == Keys.Control && convertationresult != 0)
+            if (Control.ModifierKeys == Keys.Control && e.KeyValue == (char)Keys.F && convertationresult != 0)
             {
                 ConvertationResultTextBox.Text = Math.Round(convertationresult, 2).ToString();
             }
+        }
+
+        private void ValuteForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 

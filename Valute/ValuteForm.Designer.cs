@@ -78,7 +78,7 @@
             this.SourceCurrencyGroupBox.Size = new System.Drawing.Size(170, 45);
             this.SourceCurrencyGroupBox.TabIndex = 2;
             this.SourceCurrencyGroupBox.TabStop = false;
-            this.SourceCurrencyGroupBox.Text = "Вибір вихідної валюти";
+            this.SourceCurrencyGroupBox.Text = "Вихідна валюта";
             // 
             // SourceCurrencyComboBox
             // 
@@ -98,7 +98,7 @@
             this.ConvertCurrencyGroupBox.Size = new System.Drawing.Size(170, 45);
             this.ConvertCurrencyGroupBox.TabIndex = 3;
             this.ConvertCurrencyGroupBox.TabStop = false;
-            this.ConvertCurrencyGroupBox.Text = "Вибір валюти для конвертації";
+            this.ConvertCurrencyGroupBox.Text = "Валюта для конвертації";
             // 
             // ConvertCurrencyComboBox
             // 
@@ -166,14 +166,14 @@
             this.LightToolStripMenuItem,
             this.DarkToolStripMenuItem});
             this.ThemeToolStripMenuItem.Name = "ThemeToolStripMenuItem";
-            this.ThemeToolStripMenuItem.Size = new System.Drawing.Size(49, 21);
+            this.ThemeToolStripMenuItem.Size = new System.Drawing.Size(46, 21);
             this.ThemeToolStripMenuItem.Text = "Тема";
             // 
             // AutoToolStripMenuItem
             // 
             this.AutoToolStripMenuItem.Name = "AutoToolStripMenuItem";
             this.AutoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.AutoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.AutoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AutoToolStripMenuItem.Text = "Авто";
             this.AutoToolStripMenuItem.Click += new System.EventHandler(this.AutoToolStripMenuItem_Click);
             // 
@@ -181,7 +181,7 @@
             // 
             this.LightToolStripMenuItem.Name = "LightToolStripMenuItem";
             this.LightToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.LightToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.LightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.LightToolStripMenuItem.Text = "Світла";
             this.LightToolStripMenuItem.Click += new System.EventHandler(this.LightToolStripMenuItem_Click);
             // 
@@ -189,14 +189,14 @@
             // 
             this.DarkToolStripMenuItem.Name = "DarkToolStripMenuItem";
             this.DarkToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.DarkToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.DarkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.DarkToolStripMenuItem.Text = "Темна";
             this.DarkToolStripMenuItem.Click += new System.EventHandler(this.DarkToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(99, 21);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(98, 21);
             this.AboutToolStripMenuItem.Text = "Про програму";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -218,6 +218,7 @@
             this.MaximizeBox = false;
             this.Name = "ValuteForm";
             this.Text = "Valute";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ValuteForm_FormClosed);
             this.Load += new System.EventHandler(this.ConverterForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ValuteForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ValuteForm_KeyUp);
