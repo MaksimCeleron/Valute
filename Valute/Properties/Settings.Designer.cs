@@ -34,5 +34,41 @@ namespace Valute.Properties {
                 this["Theme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CodeCurrencyDisplay {
+            get {
+                return ((bool)(this["CodeCurrencyDisplay"]));
+            }
+            set {
+                this["CodeCurrencyDisplay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AlwaysShowFullCount {
+            get {
+                return ((bool)(this["AlwaysShowFullCount"]));
+            }
+            set {
+                this["AlwaysShowFullCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseEnglishLanguage {
+            get {
+                return ((bool)(this["UseEnglishLanguage"]));
+            }
+            set {
+                this["UseEnglishLanguage"] = value;
+            }
+        }
     }
 }

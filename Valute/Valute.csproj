@@ -64,12 +64,6 @@
     <Compile Include="RatesForm.Designer.cs">
       <DependentUpon>RatesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ValuteWidgetForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ValuteWidgetForm.Designer.cs">
-      <DependentUpon>ValuteWidgetForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ValuteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,9 +77,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RatesForm.resx">
       <DependentUpon>RatesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ValuteWidgetForm.resx">
-      <DependentUpon>ValuteWidgetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ValuteForm.resx">
       <DependentUpon>ValuteForm.cs</DependentUpon>

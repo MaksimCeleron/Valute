@@ -29,12 +29,17 @@ namespace Valute
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.ProgramLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.ProgramNameLabel = new System.Windows.Forms.Label();
             this.ProgramVersionLabel = new System.Windows.Forms.Label();
             this.ProgramDeveloperLabel = new System.Windows.Forms.Label();
             this.ProgramDescriptionLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProgramLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +70,7 @@ namespace Valute
             this.ProgramVersionLabel.Name = "ProgramVersionLabel";
             this.ProgramVersionLabel.Size = new System.Drawing.Size(58, 13);
             this.ProgramVersionLabel.TabIndex = 2;
-            this.ProgramVersionLabel.Text = "Версія 1.1";
+            this.ProgramVersionLabel.Text = "Версія 1.2";
             // 
             // ProgramDeveloperLabel
             // 
@@ -85,11 +90,48 @@ namespace Valute
             this.ProgramDescriptionLabel.TabIndex = 4;
             this.ProgramDescriptionLabel.Text = "Конвертер валют, написаний на C#";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(213, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "YouTube канал";
+            this.toolTip1.SetToolTip(this.button1, "https://www.youtube.com/channel/UCR7RC5PCfs4-RZz6TUrBQDA");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(213, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Telegram канал";
+            this.toolTip1.SetToolTip(this.button2, "https://t.me/MaksimCeleronCh");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 153);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(213, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "GitHub";
+            this.toolTip1.SetToolTip(this.button3, "https://github.com/MaksimCeleron");
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(237, 101);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(237, 188);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ProgramDescriptionLabel);
             this.Controls.Add(this.ProgramDeveloperLabel);
             this.Controls.Add(this.ProgramVersionLabel);
@@ -115,5 +157,9 @@ namespace Valute
         private System.Windows.Forms.Label ProgramVersionLabel;
         private System.Windows.Forms.Label ProgramDeveloperLabel;
         private System.Windows.Forms.Label ProgramDescriptionLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
