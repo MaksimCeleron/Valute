@@ -27,7 +27,7 @@ namespace Valute
         {
             RatesToolStripMenuItem.Text = "1 UAH - " + Math.Round(converter.GetCurrencies()[12].GetRate(), 2) + " USD";
 
-            if (!Properties.Settings.Default.CodeCurrencyDisplay)
+            if (!Properties.Settings.Default.CodeCurrencyDisplay && !Properties.Settings.Default.UseEnglishLanguage)
             {
                 назваToolStripMenuItem_Click(назваToolStripMenuItem, null);
             } else
@@ -107,17 +107,26 @@ namespace Valute
             int selectedconvertcurrencyint = 0;
             
             ConvertCurrencyComboBox.Items.Clear();
-            if (!Properties.Settings.Default.CodeCurrencyDisplay)
-            {
-                for (int repeats = 0; repeats < converter.GetCurrencies().Count; repeats++)
-                {
-                    ConvertCurrencyComboBox.Items.Add(converter.GetCurrencies()[repeats].GetName());
-                }
-            } else
+            if (Properties.Settings.Default.UseEnglishLanguage)
             {
                 for (int repeats = 0; repeats < converter.GetCurrencies().Count; repeats++)
                 {
                     ConvertCurrencyComboBox.Items.Add(converter.GetCurrencies()[repeats].GetCode());
+                }
+            } else
+            {
+                if (!Properties.Settings.Default.CodeCurrencyDisplay)
+                {
+                    for (int repeats = 0; repeats < converter.GetCurrencies().Count; repeats++)
+                    {
+                        ConvertCurrencyComboBox.Items.Add(converter.GetCurrencies()[repeats].GetName());
+                    }
+                } else
+                {
+                    for (int repeats = 0; repeats < converter.GetCurrencies().Count; repeats++)
+                    {
+                        ConvertCurrencyComboBox.Items.Add(converter.GetCurrencies()[repeats].GetCode());
+                    }
                 }
             }
             ConvertCurrencyComboBox.Items.RemoveAt(SourceCurrencyComboBox.SelectedIndex);
@@ -336,8 +345,11 @@ namespace Valute
 
         private void кодToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.CodeCurrencyDisplay = true;
-            Properties.Settings.Default.Save();
+            if (sender == кодToolStripMenuItem)
+            {
+                Properties.Settings.Default.CodeCurrencyDisplay = true;
+                Properties.Settings.Default.Save();
+            }
 
             int selectedsourcecurrency = SourceCurrencyComboBox.SelectedIndex != -1 ? SourceCurrencyComboBox.SelectedIndex : 0;
             int selectedconvertcurrency = ConvertCurrencyComboBox.SelectedIndex != -1 ? ConvertCurrencyComboBox.SelectedIndex : 0;
@@ -434,11 +446,15 @@ namespace Valute
             ConvertCurrencyGroupBox.Text = "Валюта для конвертації";
             ConvertationResultGroupBox.Text = "Результат конвертації";
 
-            назваToolStripMenuItem.Enabled = true;
-            кодToolStripMenuItem.Enabled = true;
-
             Properties.Settings.Default.UseEnglishLanguage = false;
             Properties.Settings.Default.Save();
+
+            назваToolStripMenuItem.Enabled = true;
+            кодToolStripMenuItem.Enabled = true;
+            if (!Properties.Settings.Default.CodeCurrencyDisplay)
+            {
+                назваToolStripMenuItem_Click(назваToolStripMenuItem, null);
+            }
 
             українськаToolStripMenuItem.Checked = true;
             англійськаToolStripMenuItem.Checked = false;
@@ -466,12 +482,12 @@ namespace Valute
             ConvertCurrencyGroupBox.Text = "Convert currency";
             ConvertationResultGroupBox.Text = "Convertation result";
 
-            кодToolStripMenuItem_Click(кодToolStripMenuItem, null);
-            назваToolStripMenuItem.Enabled = false;
-            кодToolStripMenuItem.Enabled = false;
-
             Properties.Settings.Default.UseEnglishLanguage = true;
             Properties.Settings.Default.Save();
+
+            кодToolStripMenuItem_Click(англійськаToolStripMenuItem, null);
+            назваToolStripMenuItem.Enabled = false;
+            кодToolStripMenuItem.Enabled = false;
 
             українськаToolStripMenuItem.Checked = false;
             англійськаToolStripMenuItem.Checked = true;
